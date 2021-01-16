@@ -1,0 +1,17 @@
+{
+  "name": "daily-song-bot",
+  "version": "1.0.0",
+  "description": "A Twitter Bot that tweets a song relased on today's date",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**"
+  },
+  "author": "Júlia Polbach",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mocha": "^8.2.1",
+    "sinon": "^9.2.3",
+    "twit": "^2.2.11"
+  }
+}
