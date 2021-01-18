@@ -12,17 +12,16 @@ const config = {
 const Twit = new twit(config)
 
 function tweet() {
-    Twit.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
-        console.log(data)
-        if (err) {
-            console.log(err.stack);
-         } else {
-            return 'Message tweeted!'
-         }
+    return Twit.post('statuses/update', { status: 'hello world!' }).then(data => {
+        console.log({data})
+        return 'Message tweeted!'
+      }).catch(err => {
+          console.log('Error:', err)
+          throw err
       })
 
 }
 
 //tweet()
 
-module.exports = {tweet}
+module.exports = {tweet, Twit}
