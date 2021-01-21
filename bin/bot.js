@@ -11,15 +11,13 @@ const config = {
 
 const Twit = new twit(config)
 
-function tweet() {
-    return Twit.post('statuses/update', { status: 'hello world!' }).then(data => {
-        console.log({data})
-        return 'Message tweeted!'
-      }).catch(err => {
-          console.log('Error:', err)
-          throw err
-      })
-
+async function tweet() {
+    try {
+        return await Twit.post('statuses/update', { status: 'hello world!' })
+    } catch (err) {
+        //TODO
+        console.log('Error:', err.message)
+    }
 }
 
 //tweet()
